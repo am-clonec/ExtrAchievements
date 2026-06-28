@@ -6,7 +6,7 @@
 
         <VersionPrefix>1.0.0</VersionPrefix>
         <VersionSuffix>dev</VersionSuffix>
-        <Description>Mod generated using Reactor Template</Description>
+        <Description>Among us mod that adds some achievements.</Description>
         <!-- <Authors>your name</Authors> -->
     </PropertyGroup>
 
@@ -22,4 +22,15 @@
     <Target Name="Copy" AfterTargets="Build" Condition="'$(AmongUs)' != ''">
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(AmongUs)/BepInEx/plugins/" UseSymboliclinksIfPossible="true"/>
     </Target>
+
+    <ItemGroup>
+        <Reference Include="Achievements API">
+            <HintPath>..\Packages\Local\AchievementsAPI.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\*.png"/>
+    </ItemGroup>
+    
 </Project>
